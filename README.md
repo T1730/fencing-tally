@@ -1,6 +1,6 @@
 # Fencing Tally
 
-Eine simple Android app zum Zählen von Punkten beim Fechten.\
+Eine simple Android app zum Zählen von Punkten beim Fechten.
 
 ## Motivation
 
