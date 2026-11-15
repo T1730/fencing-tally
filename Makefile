@@ -5,10 +5,11 @@ KEYSTORE=$(SDK)/keystore.jks
 NAME=tally
 
 clean:
-	rm -r build/
+	@echo "clear build directory"
+	@rm -r build/
 
-setup:
-	@echo "setup build directory"
+setup: clean
+	@echo "create build directory"
 	@mkdir -p build/gen build/obj build/apk
 
 rfile: setup
@@ -25,7 +26,7 @@ java: setup rfile
 	@echo "compile java source code"
 	@javac --release 11 -classpath $(PLATFORM)/android.jar -d build/obj \
 	build/gen/net/$(NAME)/R.java \
-	src/java/net/$(NAME)/MainActivity.java
+	src/java/net/$(NAME)/*.java
 	@echo "convert .class files to dalvik byte code"
 	@$(BUILD_TOOLS)/d8 --release --lib $(PLATFORM)/android.jar \
 	--output build/apk/ build/obj/net/$(NAME)/*.class
