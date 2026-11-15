@@ -28,19 +28,38 @@ public class MainActivity extends Activity {
 
 		this.right_text = (TextView)findViewById(R.id.rightscore_text);
 		this.right_button = (Button)findViewById(R.id.rightscore_button);
+
+		this.update();
     }
+
+	@Override
+	protected void onSaveInstanceState(Bundle state) {
+		state.putInt("left_score", this.left_score);
+		state.putInt("right_score", this.right_score);
+	}
+
+	@Override
+	protected void onRestoreInstanceState(Bundle savedInstanceState) {
+		this.left_score = savedInstanceState.getInt("left_score");
+		this.right_score = savedInstanceState.getInt("right_score");
+		this.update();
+	}
 
 	public void increment(View v) {
 		switch(v.getId()) {
 			case R.id.leftscore_button:
 				this.left_score += 1;
-				this.left_text.setText(String.valueOf(this.left_score));
 				break;
 			case R.id.rightscore_button:
 				this.right_score += 1;
-				this.right_text.setText(String.valueOf(this.right_score));
 				break;
 			default: break;
 		}
+		this.update();
+	}
+	
+	public void update() {
+		this.left_text.setText(String.valueOf(this.left_score));
+		this.right_text.setText(String.valueOf(this.right_score));
 	}
 }
