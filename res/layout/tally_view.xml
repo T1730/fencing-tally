@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:gravity="center"
+	android:orientation="horizontal"
+	>
+
+	<!-- left half -->
+	<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+	android:layout_weight="1"
+	android:gravity="center"
+	android:orientation="vertical">
+		<TextView
+			android:id="@+id/leftscore_text"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1"
+			android:background="@color/black"
+			android:text="0"
+			android:textColor="@color/white"
+			android:autoSizeTextType="uniform"
+			android:gravity="center"
+		/>
+		<Button
+			android:id="@+id/leftscore_button"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1"
+			android:background="@color/red"
+		/>
+	</LinearLayout>
+
+	<!-- right half -->
+	<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+	android:layout_weight="1"
+	android:gravity="center"
+	android:orientation="vertical">
+		<TextView
+			android:id="@+id/rightscore_text"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1"
+			android:background="@color/black"
+			android:text="0"
+			android:textColor="@color/white"
+			android:autoSizeTextType="uniform"
+			android:gravity="center"
+		/>
+		<Button
+			android:id="@+id/rightscore_button"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1"
+			android:background="@color/green"
+		/>
+	</LinearLayout>
+</LinearLayout>
