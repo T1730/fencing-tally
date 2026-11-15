@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="net.tally"
-          versionCode="1"
-          versionName="0.1">
+<manifest 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	package="net.tally"
+    versionCode="1"
+	versionName="0.1"
+>
     <uses-sdk android:minSdkVersion="34"/>
-    <application android:label="Tally">
+	<application 
+		android:label="Tally"
+		android:theme="@android:style/Theme.NoTitleBar"     
+	>
+		<!-- android:theme="@style/AppTheme.NoActionBar" -->
         <activity android:name=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
