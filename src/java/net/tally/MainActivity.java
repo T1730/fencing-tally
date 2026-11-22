@@ -3,6 +3,7 @@ package net.tally;
 import android.app.Activity;
 import android.os.Bundle;
 
+import android.graphics.Color;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
@@ -28,9 +29,11 @@ public class MainActivity extends Activity {
 
 		this.left_text = (TextView)findViewById(R.id.left_score_text);
 		this.left_button = (Button)findViewById(R.id.left_score_button);
+		this.left_button.setBackgroundColor(getResources().getColor(R.color.white));
 
 		this.right_text = (TextView)findViewById(R.id.right_score_text);
 		this.right_button = (Button)findViewById(R.id.right_score_button);
+		this.right_button.setBackgroundColor(getResources().getColor(R.color.white));
 
 		this.stopwatch = new Stopwatch((Chronometer)findViewById(R.id.stopwatch));
 
@@ -59,7 +62,12 @@ public class MainActivity extends Activity {
 
 	public void onClick(View v) {
 		if (this.stopwatch.running()) {
+			// stop stopwatch
 			this.stopwatch.stop();
+			// gray out buttons
+			this.left_button.setBackgroundColor(getResources().getColor(R.color.white));
+			this.right_button.setBackgroundColor(getResources().getColor(R.color.white));
+
 			// increment score
 			switch (v.getId()) {
 				case R.id.left_score_button: this.left_score += 1; break;
@@ -70,6 +78,9 @@ public class MainActivity extends Activity {
 		} else {
 			// start stopwatch
 			this.stopwatch.start();
+			// recolor buttons
+			this.left_button.setBackgroundColor(getResources().getColor(R.color.red));
+			this.right_button.setBackgroundColor(getResources().getColor(R.color.green));
 		}
 	}
 }
