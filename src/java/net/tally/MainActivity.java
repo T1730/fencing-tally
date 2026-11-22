@@ -23,11 +23,11 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tally_view);
 
-		this.left_text = (TextView)findViewById(R.id.leftscore_text);
-		this.left_button = (Button)findViewById(R.id.leftscore_button);
+		this.left_text = (TextView)findViewById(R.id.left_score_text);
+		this.left_button = (Button)findViewById(R.id.left_score_button);
 
-		this.right_text = (TextView)findViewById(R.id.rightscore_text);
-		this.right_button = (Button)findViewById(R.id.rightscore_button);
+		this.right_text = (TextView)findViewById(R.id.right_score_text);
+		this.right_button = (Button)findViewById(R.id.right_score_button);
 
 		this.update();
     }
@@ -45,21 +45,22 @@ public class MainActivity extends Activity {
 		this.update();
 	}
 
-	public void increment(View v) {
-		switch(v.getId()) {
-			case R.id.leftscore_button:
-				this.left_score += 1;
-				break;
-			case R.id.rightscore_button:
-				this.right_score += 1;
-				break;
-			default: break;
-		}
-		this.update();
-	}
-	
 	public void update() {
 		this.left_text.setText(String.valueOf(this.left_score));
 		this.right_text.setText(String.valueOf(this.right_score));
+	}
+
+	public void onClick(View v) {
+		switch (v.getId()) {
+			case R.id.left_score_button:
+				this.left_score += 1;
+				this.update();
+				break;
+			case R.id.right_score_button:
+				this.right_score += 1;
+				this.update();
+				break;
+			default: break;
+		}
 	}
 }

@@ -4,21 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 	android:gravity="center"
-	android:orientation="horizontal"
+	android:orientation="vertical"
 	>
 
-	<!-- left half -->
+	<!-- timer -->
+
+	<!-- scores -->
 	<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="0dp"
-    android:layout_height="match_parent"
-	android:layout_weight="1"
-	android:gravity="center"
-	android:orientation="vertical">
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:gravity="center"
+		android:orientation="horizontal">
+		<!-- left score -->
 		<TextView
-			android:id="@+id/leftscore_text"
-			android:layout_width="match_parent"
-			android:layout_height="0dp"
+			android:id="@+id/left_score_text"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
 			android:layout_weight="1"
 			android:background="@color/black"
 			android:text="0"
@@ -26,42 +29,45 @@
 			android:autoSizeTextType="uniform"
 			android:gravity="center"
 		/>
-		<Button
-			android:id="@+id/leftscore_button"
-			android:layout_width="match_parent"
-			android:layout_height="0dp"
+		<!-- right score -->
+		<TextView
+			android:id="@+id/right_score_text"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
 			android:layout_weight="1"
-			android:background="@color/red"
-			android:onClick="increment"
+			android:background="@color/black"
+			android:text="0"
+			android:textColor="@color/white"
+			android:autoSizeTextType="uniform"
+			android:gravity="center"
 		/>
 	</LinearLayout>
 
-	<!-- right half -->
+	<!-- buttons -->
 	<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="0dp"
-    android:layout_height="match_parent"
-	android:layout_weight="1"
-	android:gravity="center"
-	android:orientation="vertical">
-		<TextView
-			android:id="@+id/rightscore_text"
-			android:layout_width="match_parent"
-			android:layout_height="0dp"
-			android:layout_weight="1"
-			android:background="@color/black"
-			android:text="0"
-			android:textColor="@color/white"
-			android:autoSizeTextType="uniform"
-			android:gravity="center"
-		/>
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:gravity="center"
+		android:orientation="horizontal">
+		<!-- left button -->
 		<Button
-			android:id="@+id/rightscore_button"
-			android:layout_width="match_parent"
-			android:layout_height="0dp"
+			android:id="@+id/left_score_button"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:background="@color/red"
+			android:onClick="onClick"
+		/>
+		<!-- right button -->
+		<Button
+			android:id="@+id/right_score_button"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
 			android:layout_weight="1"
 			android:background="@color/green"
-			android:onClick="increment"
+			android:onClick="onClick"
 		/>
 	</LinearLayout>
 </LinearLayout>
