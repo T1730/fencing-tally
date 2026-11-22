@@ -7,7 +7,18 @@
 	android:orientation="vertical"
 	>
 
-	<!-- timer -->
+	<!-- stopwatch -->
+	<Chronometer
+		android:id="@+id/stopwatch"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:background="@color/black"
+		android:text="0"
+		android:textColor="@color/white"
+		android:autoSizeTextType="uniform"
+		android:gravity="center"
+	/>
 
 	<!-- scores -->
 	<LinearLayout
