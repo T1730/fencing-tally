@@ -17,10 +17,12 @@ public class Stopwatch {
 
 	public void onSaveInstanceState(Bundle state) {
 		state.putBoolean("running", this.running);
+		state.putLong("stopped_at", this.stopped_at);
 	}
 
 	public void onRestoreInstanceState(Bundle savedInstanceState) {
 		this.running = savedInstanceState.getBoolean("running");
+		this.stopped_at = savedInstanceState.getLong("stopped_at");
 	}
 
     public boolean running() {
